@@ -20,8 +20,8 @@ app.use(
 );
 app.use(express.json());
 app.use(cookieParser());
-app.use("/api/auth",AuthRouter);
-app.use("/api/user",UserRouter);
+app.use("/auth",AuthRouter);
+app.use("/user",UserRouter);
 
 app.set('port', (process.env.PORT || 5050));
 
