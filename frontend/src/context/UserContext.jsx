@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react'
+import React, { createContext} from 'react'
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -51,7 +51,6 @@ export const UserContext=({children}) =>{
       try {
         const updatedHistory = indexToDelete === null ? [] : userData.history.filter((_, index) => index !== indexToDelete);
     
-        // Send updated history to backend (adjust endpoint as needed)
         const { data } = await clientuser.post('/delete-history', {
           history: updatedHistory
         }, { withCredentials: true });
