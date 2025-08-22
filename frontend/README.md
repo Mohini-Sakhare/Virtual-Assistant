@@ -9,6 +9,7 @@ Tech Stack
 - AI & Voice: Gemini AI, Web Speech API
 - Auth & Security: JWT, bcryptjs, crypto
 - Utilities: Moment.js, Multer, Cloudinary
+- Tools :VS Code, Thunder Client.
 - Deployment: Render
 
 
