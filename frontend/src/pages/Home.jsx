@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState, useRef, use } from "react";
 import { userDataContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { RiMenu3Fill } from "react-icons/ri";
 import { RxCross1 } from "react-icons/rx";
 import user from "../assets/user.gif";
@@ -9,7 +8,7 @@ import ai from "../assets/ai.gif";
 import { MdDelete } from "react-icons/md";
 
 function Home() {
-  const { userData, setUserData, getGeminiResponse, handleDeleteHistory } =
+  const { userData, setUserData,clientuser, getGeminiResponse, handleDeleteHistory } =
     useContext(userDataContext);
   const navigate = useNavigate();
 
@@ -24,13 +23,9 @@ function Home() {
 
   const [menu, setMenu] = useState(false);
 
-  const client = axios.create({
-    baseURL: "https://virtual-assistant-backend-d611.onrender.com",
-  });
-
   const handleLogOut = async () => {
     try {
-      const { data } = await client.get("/logout", { withCredentials: true });
+      const { data } = await clientuser.get("/auth/logout", { withCredentials: true });
       console.log(data);
       setUserData(null);
     } catch (error) {
