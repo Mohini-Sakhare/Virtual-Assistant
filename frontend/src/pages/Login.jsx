@@ -3,16 +3,10 @@ import aibg from "/aibg.avif";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { userDataContext } from "../context/UserContext";
 
 export default function Login() {
-
- const client = axios.create({
-     baseURL: 'https://virtual-assistant-backend-d611.onrender.com'
- })
-
- const {setUserData}=useContext(userDataContext);
+ const {setUserData, clientuser}=useContext(userDataContext);
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -40,8 +34,8 @@ export default function Login() {
     setErr('');
     setLoading(true);
     try {
-      const { data } = await client.post(
-        "/login",
+      const { data } = await clientuser.post(
+        "/auth/login",
         {
           ...inputValue,
         },
