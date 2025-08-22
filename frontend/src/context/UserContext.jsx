@@ -9,7 +9,7 @@ export const userDataContext = createContext();
 export const UserContext=({children}) =>{
 
   const clientuser = axios.create({
-       baseURL: 'http://localhost:5050/api/user'
+       baseURL: 'https://virtual-assistant-backend-d611.onrender.com'
      })
 
   const [userData, setUserData]=useState(null);
