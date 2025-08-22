@@ -25,7 +25,7 @@ function Home() {
   const [menu, setMenu] = useState(false);
 
   const client = axios.create({
-    baseURL: "http://localhost:5050/api/auth",
+    baseURL: "https://virtual-assistant-backend-d611.onrender.com",
   });
 
   const handleLogOut = async () => {
