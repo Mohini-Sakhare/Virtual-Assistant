@@ -9,7 +9,7 @@ import { userDataContext } from "../context/UserContext";
 export default function Login() {
 
  const client = axios.create({
-     baseURL: 'http://localhost:5050/api/auth'
+     baseURL: 'https://virtual-assistant-backend-d611.onrender.com'
  })
 
  const {setUserData}=useContext(userDataContext);
