@@ -21,7 +21,7 @@ export const UserContext=({children}) =>{
 
     const handleCurrentUser=async()=>{
       try{
-        const result= await clientuser.get('/current',{
+        const result= await clientuser.get('/user/current',{
           withCredentials:true
         })
         setUserData(result.data);
@@ -37,7 +37,7 @@ export const UserContext=({children}) =>{
 
   const getGeminiResponse=async(command)=>{
      try{
-      const result= await clientuser.post('/asktoassistant',
+      const result= await clientuser.post('/user/asktoassistant',
         {command},
         {withCredentials:true}
       )
@@ -51,7 +51,7 @@ export const UserContext=({children}) =>{
       try {
         const updatedHistory = indexToDelete === null ? [] : userData.history.filter((_, index) => index !== indexToDelete);
     
-        const { data } = await clientuser.post('/delete-history', {
+        const { data } = await clientuser.post('/user/delete-history', {
           history: updatedHistory
         }, { withCredentials: true });
     
