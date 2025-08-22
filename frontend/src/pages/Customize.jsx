@@ -1,12 +1,12 @@
 import React, { useState,useRef, use, useContext } from "react";
 import Card from "../components/Card";
-import ai1 from "../assets/ai1.WEBP";
+import ai1 from "../assets/ai1.webp";
 import ai2 from "../assets/ai2.jpg";
 import ai3 from "../assets/ai3.jpg";
 import ai4 from "../assets/ai4.jpg";
 import ai5 from "../assets/ai5.jpg";
 import ai6 from "../assets/ai6.jpg";
-import ai7 from "../assets/ai7.AVIF";
+import ai7 from "../assets/ai7.avif";
 import ai8 from "../assets/ai8.jpg";
 import ai9 from "../assets/ai9.jpg";
 import { RiImageAddFill } from "react-icons/ri";
@@ -46,7 +46,7 @@ function Customize() {
         <Card image={ai7} />
         <Card image={ai8} />
         <Card image={ai9} />
-        {/* <Card image={ai11}/> */}
+      
         <div className={`w-[65px] h-[115px] lg:w-[140px] lg:h-[200px] bg-[#010133] border-2
                       border-[#050585] rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-blue-800  
                       cursor-pointer hover:border-2 hover:border-blue-100 flex items-center justify-center 
