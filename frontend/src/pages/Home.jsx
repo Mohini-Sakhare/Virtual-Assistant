@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState, useRef, use } from "react";
 import { userDataContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
 import { RiMenu3Fill } from "react-icons/ri";
 import { RxCross1 } from "react-icons/rx";
 import user from "../assets/user.gif";
@@ -29,30 +28,11 @@ function Home() {
     baseURL: "http://localhost:5050/api/auth",
   });
 
-  const handleError = (err) =>
-    toast.error(err, {
-      position: "bottom-left",
-    });
-  const handleSuccess = (msg) =>
-    toast.success(msg, {
-      position: "bottom-left",
-    });
-
   const handleLogOut = async () => {
     try {
       const { data } = await client.get("/logout", { withCredentials: true });
       console.log(data);
-      const { success, message } = data;
-      if (success) {
-        handleSuccess(message);
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
-      } else {
-        handleError(message);
-      }
       setUserData(null);
-      navigate("/login");
     } catch (error) {
       console.log(error);
       setUserData(null);
@@ -174,7 +154,6 @@ function Home() {
     };
 
     recognition.onresult = async (e) => {
-      // console.log(e);
       const transcript = e.results[e.results.length - 1][0].transcript.trim();
       console.log("Userspeak:" + transcript);
 
@@ -265,7 +244,9 @@ function Home() {
               title="Delete this entry"
             />
           </div>
-          <div className="w-[87%] overflow-y-auto flex flex-col m-5 ml-[20px] gap-[8px] text-cyan-500 text-[18px]">
+          
+        </div>
+        <div className="min-w-[85%] overflow-y-auto flex flex-col mx-7 my-2 gap-[8px] text-cyan-500 text-[18px]">
           {userData.history.map((data, index) => (
             <div
               key={index}
@@ -279,7 +260,6 @@ function Home() {
               />
             </div>
           ))}
-        </div>
         </div>
       </div>
 
