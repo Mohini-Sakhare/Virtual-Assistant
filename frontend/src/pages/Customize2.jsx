@@ -1,17 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { userDataContext } from '../context/UserContext'
-import axios from 'axios';
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 
 
 function Customize2() {
-    
-   const clientuser = axios.create({
-       baseURL: 'http://localhost:5050/api/user'
-     })  
-
-    const {userData, selectImg, backImg,setUserData}=useContext(userDataContext)
+    const {userData, clientuser, selectImg, backImg,setUserData}=useContext(userDataContext)
     const [assistantName, setAssistantName]=useState(userData?.AssistantName || "")
 
     const [loading, setLoading]=useState(false)
@@ -29,12 +23,8 @@ function Customize2() {
         }else{
             formData.append("imageUrl",selectImg)
         }
-        const result = await clientuser.post('/update', 
-          // {
-          //   assistantName:assistantName,
-          //   assistantImage:backImg,
-          //   imageUrl:selectImg
-          // } ,
+        const result = await clientuser.post('/user/update', 
+         
           formData,
     
           {withCredentials:true}
