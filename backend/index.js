@@ -23,10 +23,15 @@ app.use("/user",UserRouter);
 
 app.set('port', (process.env.PORT || 5050));
 
-const start = async()=>{
-   app.listen(5050, ()=>{
-    connectDb()
-    console.log("server started");
-})
-}
+const start = async () => {
+  try {
+    await connectDb();
+    app.listen(5050, () => {
+      console.log("server started");
+    });
+  } catch (err) {
+    console.error("Failed to start server:", err);
+  }
+};
+
 start();
