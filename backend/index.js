@@ -1,5 +1,4 @@
 import express from "express";
-import mongoose from "mongoose";
 import dotenv from 'dotenv';
 dotenv.config()
 import connectDb from "./config/db.js";
@@ -7,7 +6,6 @@ import AuthRouter from "./routes/AuthRoutes.js";
 import cookieParser from "cookie-parser";
 import cors from 'cors'
 import UserRouter from "./routes/UserRoutes.js";
-import geminiResponse from "./gemini.js";
 
 const app=express();
 
