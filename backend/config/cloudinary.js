@@ -1,6 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary';
-import fs, { unlinkSync } from "fs"
-import dotenv from 'dotenv'
+import fs, { unlinkSync } from "fs";
 dotenv.config();
 
 const uploadOnCloudinary = async(filePath)=>{
