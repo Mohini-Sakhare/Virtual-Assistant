@@ -4,8 +4,8 @@ Conversational AI assistant with customizable branding, smart replies, and real-
 
 Tech Stack:
 
-Frontend: HTML, Tailwind CSS, React (Vite), React Icons
-Backend: Node.js, Express, MongoDB, Axios, CORS, Cookie Parser
+Frontend: HTML, Tailwind CSS, React (Vite), React Icons, Axios.
+Backend: Node.js, Express, MongoDB, CORS, Cookie Parser
 AI & Voice: Gemini AI, Web Speech API
 Auth & Security: JWT, bcryptjs, crypto
 Utilities: Moment.js, Multer, Cloudinary
@@ -13,13 +13,13 @@ Deployment: Render
 
 Key Features:
 
-Voice Interaction: Real-time voice input/output using Web Speech API
-Smart AI Responses: Integrated Gemini AI for intelligent, context-aware replies
-Authentication System: Secure JWT-based login/signup with bcrypt password encryption
-Customizable Branding: Personalize assistant name, avatar, and voice identity
-Image Uploading: Cloudinary + Multer integration for assistant avatars
-Responsive UI: Mobile-first design using Tailwind CSS
-Deployment Ready: Live and hosted on Render for real-world usability
+1. Voice Interaction: Real-time voice input/output using Web Speech API
+2. Smart AI Responses: Integrated Gemini AI for intelligent, context-aware replies
+3. Authentication System: Secure JWT-based login/signup with bcrypt password encryption
+4. Customizable Branding: Personalize assistant name, avatar, and voice identity
+5. Image Uploading: Cloudinary + Multer integration for assistant avatars
+6. Responsive UI: Mobile-first design using Tailwind CSS
+7. Deployment Ready: Live and hosted on Render for real-world usability
 
 Development Highlights :
 
