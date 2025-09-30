@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-dotenv.config()
 
 const genToken=async (userId)=>{
     try{
